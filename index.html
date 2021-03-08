@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DiscordJS</title>
+  <link rel="shortcut icon" type="image/png" href="images/ico_full.png"/>
+  <link rel="stylesheet" href="stylesheet/prism.css">
+  <link rel="stylesheet" href="stylesheet/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+  <!-- Introduction -->
+  <div class="banner" style="display: block !important; background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://i.redd.it/gmyldjq35fy51.png');">
+    <div id="class-languages">
+      <i class="fab fa-html5 mr-1" style="color: #f84820"></i>
+      <i class="fab fa-css3-alt mr-1" style="color: #1970b5"></i>
+      <i class="fab fa-js-square mr-1" style="color: #FFE01B"></i>
+    </div>
+    <div class="container">
+      <div class="main">
+        <img src="images/logo.png" alt="">
+        <div class="class-title">
+          <h1>DiscordJS - Challenge</h1>
+        </div>
+      </div>
+      <p>Aujourd'hui, on va créer un bot qui a une réelle utilité!</p>
+      <a class="btn btn-primary tl-button" href="#challenge" role="button">Commencer !</a>
+    </div>
+  </div>
+
+  <div class="container" id="challenge">
+
+    <div class="accordion" id="accordionExample">
+
+      <!-- Étape 1 -->
+      <div class="card">
+        <div class="card-header" id="heading1">
+          <h2 class="mb-0">
+            <button class="btn btn-link done task" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+              Étape 1 - Défis à compléter avant
+            </button>
+          </h2>
+        </div>
+        <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordionExample">
+          <div class="card-body">
+            <p>Avant d'entamer ce défi, assure toi d'avoir déjà fait ceux ci:</p>
+            <ul>
+              <li><a href="https://techieslab.github.io/DiscordJS-PingPong/">Discord.js - Ping Pong</a></li>
+              <li><a href="https://techieslab.github.io/DiscordJS-Commandes/">Discord.js - Commandes</a></li>
+              <li><a href="https://techieslab.github.io/DiscordJS-MentionsGifsPublish/">Discord.js - Gifs, Mentions et Publication</a></li>
+              <li><a href="https://techieslab.github.io/DiscordJS-EmbeddedWelcome/">Discord.js - Embeds</a></li>
+              <li><a href="https://techieslab.github.io/DiscordJS-ReactionsTimeout/">Discord.js - Reacions et Timeouts</a></li>
+            </ul>
+            <p>Ensuite, assure-toi que tu sois bien connecté à ton compte <a href="https://repl.it">Repl.It</a>, et que tu aies ton projet de la fois passée.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 2 -->
+      <div class="card">
+        <div class="card-header" id="heading2">
+          <h2 class="mb-0">
+            <button class="btn btn-link task" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+              Étape 2 - Description du Challenge
+            </button>
+          </h2>
+        </div>
+        <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample">
+          <div class="card-body">
+            <p>Notre challenge aujourd'hui est de créer un bot avec une craie utilité. On a déjà vu tous les outils nécessaires pour le créer, donc tu devrais pouvoir y arriver!</p>
+
+            <p>Notre bot sera un QuizBot. Tu peux aller créer un nouveau bot sur le site développeur de Discord. Si tu as oublié comment faire, tu peux revoir l'activité numéro 1.</p>
+
+            <p>Ensuite, invite le au serveur. Donne lui toutes les permissions de la colonne du milieu, la colonne "Text Permissions". Finalement, il va te falloir créer un nouveau Repl.it, et bien l'initialiser, de nouveau comme dans la première activité.</p>
+
+            <pre><code class="language-js">
+              const Discord = require('discord.js');
+              const bot = new Discord.Client();
+
+              bot.on('...', function() {
+                // ...
+              });
+
+              bot.on('...', function() {
+                // ...
+              });
+
+              bot.login("TOKEN");
+            </code></pre>
+
+            <p>Mais quel sera le but de notre bot? Bonne question! Notre bot va nous donner une question. On va alors devoir répondre, et notre bot va mettre des réactions à nos réponses en fonction de si c'est la bonne réponse ou non. On pourra même ajouter d'autres fonctionalités par après!</p>
+
+            <p>Pour arriver à bien coder ce QuizBot, on va explorer les commandes de base, les réponses aléatoires, les messages limités à un canal, les timeouts, les réactions, les embeds et autres.</p>
+
+            <p>Pour ma part, mon bot va poser des question de maths. Fais en sorte que ton bot soit plus créatif!</p>
+
+            <p>Allons-y, on a du travail!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 3 -->
+      <div class="card">
+        <div class="card-header" id="heading3">
+          <h2 class="mb-0">
+            <button class="btn btn-link task" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+              Étape 3 - Poser la question
+            </button>
+          </h2>
+        </div>
+        <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionExample">
+          <div class="card-body">
+            <p>Notre bot va poser une question quand on enverra la commande <code>!math</code>. Fais d'abord en sorte qu'il réponde simplement "Bonjour, Je suis MathBot".</p>
+
+            <pre><code class="language-js">
+              if ( /* contenu du message */ == '...' ) {
+                /* répondre au message */
+              }
+            </code></pre>
+
+            <p>Mais notre bot devrait nous donner une question plutôt que de dire bonjour! Change la réponse en une question.</p>
+
+            <p>Par après, on remarque que c'est pas drôle si la question est toujours la même... Crée une <b>liste</b> de questions, et envoie une question <b>aléatoire</b></p>
+
+            <pre><code class="language-js">
+              const questions = ['...', '...', '...'];
+
+              if ( /* contenu du message */ == '...' ) {
+                /* envoyer réponse aléatoire */
+              }
+            </code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 4 -->
+      <div class="card">
+        <div class="card-header" id="heading4">
+          <h2 class="mb-0">
+            <button class="btn btn-link task" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+              Étape 4 - Répondre
+            </button>
+          </h2>
+        </div>
+        <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionExample">
+          <div class="card-body">
+            <p>L'utilisateur va alors répondre au message du bot en envoyer <code>!reponse 42</code>. Le bot va alors soit mettre un "✅" si c'est la bonne réponse, sinon un "❌".</p>
+
+            <p>Pour vérifier si un message commence par une commande, on fait ceci:</p>
+
+            <pre><code class="language-js">
+              const msg_sep = msg.split(" ");
+
+              if ( /* premier mot de msg_sep */ == /* commande à vérifier */ ) {
+                // ...
+              }
+            </code></pre>
+
+            <p>Mais pour pouvoir vérifier si la réponse est correcte, il faut que tu te souvienne de la réponse. Lorsque tu poses la question, tu généres un nombre aléatoire qui est l'indice de la question. Tu dois stocker ce nombre dans une variable <b>globale</b> pour pouvoir la réutiliser lorsque tu checkes la réponse!</p>
+
+            <pre><code class="language-js">
+              let indice = 0;
+
+              bot.on('message', function(msg) {
+                const questions = // ...
+                const reponses = // ...
+
+                if ( /* contenu */ == '!math' ) {
+                  // Poser une question aléatoires
+                  const random = Math.floor ( /* etc */ );
+                  msg.reply( questions[random] );
+
+                  // Changer indice
+                  indice = random;
+                }
+                if ( /* contenu commence par !reponse */ ) {
+                  /* Checker si la réponse est la même que reponses[indice] (Bonne reponse) */
+                }
+              })
+            </code></pre>
+
+            <p>Finalement, si c'est la bonne réponse, tu dois réagir avec un ✅ (Ou dans le style), sinon un ❌. Pour réagir, on utilise</p>
+
+            <pre><code class="language-js">
+              msg.react("👁‍🗨");
+            </code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 5 -->
+      <div class="card">
+        <div class="card-header" id="heading5">
+          <h2 class="mb-0">
+            <button class="btn btn-link task" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+              Étape 5 - Défis en plus
+            </button>
+          </h2>
+        </div>
+        <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordionExample">
+          <div class="card-body">
+            <p>Tu peux mettre une limite au temps autorisé pour une question. Par example, au bout de 1 minutes, le bot va donner la réponse. Pour ce faire, on utilise des <code>timeout</code>!</p>
+
+            <pre><code class="language-js">
+              setTimeout(function() {
+                // ...
+              }, /* Temps en millisecondes */)
+            </code></pre>
+
+            <p>Tu peux, par exemple, lui faire envoyer un embed quand le temps est écroulé avec la réponse. Ici, tu peux de nouveau faire une liste d'embeds, comme pour les réponses.</p>
+
+            <pre><code class="language-js">
+              const embed1 = /* Premier embed */
+              const embed2 = /* Second embed */
+              const embed3 = /* Troisième embed */
+
+              const listeEmbeds = [embed1, embed2, embed3];
+            </code></pre>
+
+            <p>Après, limite ton bot à un canal spécifique. Normalement, ton animateur aura créé un canal speecifique pour les Quiz.</p>
+
+            <p>Aussi, essaye de faire en sorte que, lorsque quelqu'un trouve la réponse, le bot envoie directement l'embed au lieu d'attendre.</p>
+
+            <p>Finalement, fait un compteur du nombre de personnes qui ont essayé la question! Tu peux l'envoyer quand quelqu'un a trouvé la réponse, avec une mention "Bravo, tu as battu [102] personnes". Pour ce faire, tu aura de nouveau besoin d'une variable <b>globale</b>.</p>
+          </div>
+        </div>
+      </div>
+
+    </div> 
+  </div>
+
+
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="https://techieslab.be/"><i class="fas fa-globe"></i></i></a>
+    <a href="https://www.facebook.com/TechiesLabBrussels"><i class="fab fa-facebook"></i></a>
+    <a href="https://twitter.com/TechiesLab"><i class="fab fa-twitter"></i></a>
+  </div>
+  <div class="footer-copyright">
+    <a href="https://openclassrooms.com/fr/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3/3298561-faites-votre-mise-en-page-avec-flexbox#/id/r-3298711" rel="noopener noreferrer" target="_blank" class="alert-link copyright">
+      <i class="far fa-copyright"></i>
+      2020 Techies Lab ASBL. All rights reserved.
+    </a>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="javascript/prism.js"></script>
+</body>
+</html>
